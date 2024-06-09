@@ -1,0 +1,37 @@
+public class BankingGUI extends JFrame {
+    // ... (other GUI components remain the same)
+
+    public BankingGUI() {
+        // ... (other constructor code remains the same)
+
+        // Create the customer panel
+        customerPanel = new JPanel(new GridLayout(4, 2, 10, 10));
+        customerPanel.setBorder(BorderFactory.createTitledBorder("Customer Information"));
+
+        customerNameField = new JTextField();
+        accountNumberField = new JTextField();
+
+        savingsRadio = new JRadioButton("Savings");
+        checkingRadio = new JRadioButton("Checking");
+        ButtonGroup accountTypeGroup = new ButtonGroup();
+        accountTypeGroup.add(savingsRadio);
+        accountTypeGroup.add(checkingRadio);
+
+        String[] states = {"AL", "AK", "AZ", "AR", "CA", "CO", "CT", "DE", "FL", "GA", "HI", "ID", "IL", "IN", "IA", "KS", "KY", "LA", "ME", "MD", "MA", "MI", "MN", "MS", "MO", "MT", "NE", "NV", "NH", "NJ", "NM", "NY", "NC", "ND", "OH", "OK", "OR", "PA", "RI", "SC", "SD", "TN", "TX", "UT", "VT", "VA", "WA", "WV", "WI", "WY"};
+        stateComboBox = new JComboBox<>(states);
+
+        customerPanel.add(new JLabel("Customer Name:"));
+        customerPanel.add(customerNameField);
+        customerPanel.add(new JLabel("Account Number:"));
+        customerPanel.add(accountNumberField);
+        customerPanel.add(new JLabel("Account Type:"));
+        customerPanel.add(savingsRadio);
+        customerPanel.add(checkingRadio);
+        customerPanel.add(new JLabel("State:"));
+        customerPanel.add(stateComboBox);
+
+        mainPanel.add(customerPanel, BorderLayout.NORTH);
+
+        // ... (rest of the GUI code remains the same)
+    }
+}
